@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { rem } from "@/styles/fonts";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "SCI - UPTC",
@@ -12,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${rem.className} antialiased`}>{children}</body>
     </html>
   );
 }
