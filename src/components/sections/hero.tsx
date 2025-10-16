@@ -12,7 +12,7 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h1 className="text-6xl font-bold text-neutral-950 text-center mx-[8%]">
+          <h1 className="text-6xl font-bold text-neutral-900 text-center mx-[8%]">
             La investigación de la UPTC en un solo lugar
             <span className="text-yellow-400"></span>
           </h1>

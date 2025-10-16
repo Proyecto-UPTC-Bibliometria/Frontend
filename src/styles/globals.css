@@ -2,6 +2,7 @@
 
 @theme {
   --shadow-yellow-center: 0px 0px 50px -2px oklch(85.2% 0.199 91.936);
+  --drop-shadow-yellow-center: 0px 0px 15px oklch(85.2% 0.199 91.936);
   --shadow-black-center: 0px 0px 50px -2px #000;
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }

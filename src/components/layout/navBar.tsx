@@ -1,34 +1,64 @@
-import Link from "next/link";
+"use client";
+
 import { FiHome } from "react-icons/fi";
+import NavLink from "../links/navLink";
+import NavButton from "../buttons/navButton";
+import { IoLanguage } from "react-icons/io5";
+import { LuMoon } from "react-icons/lu";
+import Image from "next/image";
+import logo from "../../../public/logo.webp";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
     <header className="flex justify-between items-center py-12 fixed w-full px-[10%]">
-      <div></div>
+      <div>
+        <Link
+          className="flex hover:scale-115 hover:rotate-z-3 transition-all ease-bounce duration-300"
+          href={"/"}
+        >
+          <Image
+            className="drop-shadow-yellow-center"
+            src={logo}
+            alt="UPTC smooth logo"
+            height={42}
+          />
+        </Link>
+      </div>
 
       <nav>
-        <ul className="flex gap-6 items-center">
+        <ul className="flex gap-4 items-center">
           <li>
-            <Link
-              className="text-neutral-500 hover:text-neutral-800 transition-all ease-in-out duration-200 nav-link relative px-4 py-2 before:bg-transparent before:scale-50 before:origin-center hover:before:bg-neutral-200/60 hover:before:scale-105 before:rounded-xl flex items-center gap-1"
-              href={"/"}
-            >
-              <FiHome className="p-0 h-min w-fit" />
-              {/* hola mundo a todos */}
-            </Link>
+            <NavLink href={"/"}>
+              <FiHome className="p-0 h-min w-fit" size={20} />
+            </NavLink>
           </li>
           <li>
-            <Link
-              className="text-neutral-500 hover:text-neutral-800 transition-all ease-in-out duration-200 nav-link relative px-4 py-2 before:bg-transparent before:scale-50 before:origin-center hover:before:bg-neutral-200/60 hover:before:scale-105 before:rounded-xl"
-              href={"/"}
-            >
-              Grupos
-            </Link>
+            <NavLink href={"/groups"}>Grupos</NavLink>
+          </li>
+          <li>
+            <NavLink href={"/members"}>Miembros</NavLink>
+          </li>
+          <li>
+            <NavLink href={"/proyects"}>Proyectos</NavLink>
           </li>
         </ul>
       </nav>
 
-      <div></div>
+      <div>
+        <ul className="flex gap-4 items-center">
+          <li>
+            <NavButton>
+              <IoLanguage size={22} />
+            </NavButton>
+          </li>
+          <li>
+            <NavButton>
+              <LuMoon size={22} />
+            </NavButton>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }
