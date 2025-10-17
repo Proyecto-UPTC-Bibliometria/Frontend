@@ -18,7 +18,7 @@ export default function NavBar() {
           href={"/"}
         >
           <Image
-            className="drop-shadow-yellow-center"
+            className="drop-shadow-black-center/70"
             src={logo}
             alt="UPTC smooth logo"
             height={42}
