@@ -45,19 +45,13 @@ export default function NavBar() {
         </ul>
       </nav>
 
-      <div>
-        <ul className="flex gap-4 items-center">
-          <li>
-            <NavButton>
-              <IoLanguage size={22} />
-            </NavButton>
-          </li>
-          <li>
-            <NavButton>
-              <LuMoon size={22} />
-            </NavButton>
-          </li>
-        </ul>
+      <div className="flex gap-4 items-center">
+        <NavButton aria-label="Cambiar idioma">
+          <IoLanguage size={22} />
+        </NavButton>
+        <NavButton aria-label="Cambiar modo de color">
+          <LuMoon size={22} />
+        </NavButton>
       </div>
     </header>
   );

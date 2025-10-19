@@ -1,9 +1,71 @@
 import { api } from "@/config/axios.config";
 import ApiResponse from "@/interfaces/apiResponse.interface";
-import Group from "@/interfaces/Group.interface";
+import Article from "@/interfaces/article.interface";
+import Book from "@/interfaces/book.interface";
+import Group from "@/interfaces/group.interface";
+import Member from "@/interfaces/member.interface";
+import Project from "@/interfaces/project.interface";
+import Software from "@/interfaces/software.interface";
 
-export async function getGroups(page?: number): Promise<ApiResponse<Group>> {
-  const response = await api.get(`/groups?page=${page || 1}`);
+export async function getGroups(
+  query?: string,
+  page?: number
+): Promise<ApiResponse<Group>> {
+  const response = await api.get(`/groups?page=${page || 1}&${query}`);
+
+  return response.data;
+}
+
+export async function getGroupsLight(
+  query?: string,
+  page?: number
+): Promise<ApiResponse<Group>> {
+  const response = await api.get(`/light/groups?page=${page || 1}&${query}`);
+
+  return response.data;
+}
+
+export async function getMembers(
+  query?: string,
+  page?: number
+): Promise<ApiResponse<Member>> {
+  const response = await api.get(`/members?page=${page || 1}&${query}`);
+
+  return response.data;
+}
+
+export async function getArticles(
+  query?: string,
+  page?: number
+): Promise<ApiResponse<Article>> {
+  const response = await api.get(`/articles?page=${page || 1}&${query}`);
+
+  return response.data;
+}
+
+export async function getBooks(
+  query?: string,
+  page?: number
+): Promise<ApiResponse<Book>> {
+  const response = await api.get(`/books?page=${page || 1}&${query}`);
+
+  return response.data;
+}
+
+export async function getSoftwares(
+  query?: string,
+  page?: number
+): Promise<ApiResponse<Software>> {
+  const response = await api.get(`/softwares?page=${page || 1}&${query}`);
+
+  return response.data;
+}
+
+export async function getProjects(
+  query?: string,
+  page?: number
+): Promise<ApiResponse<Project>> {
+  const response = await api.get(`/projects?page=${page || 1}&${query}`);
 
   return response.data;
 }
