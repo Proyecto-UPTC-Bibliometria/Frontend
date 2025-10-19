@@ -1,7 +1,7 @@
 "use client";
 
 import { FiHome } from "react-icons/fi";
-import NavLink from "../links/navLink";
+import NavLink from "../ui/links/navLink";
 import NavButton from "../ui/buttons/navButton";
 import { IoLanguage } from "react-icons/io5";
 import { LuMoon } from "react-icons/lu";

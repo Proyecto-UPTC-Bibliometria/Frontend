@@ -3,71 +3,16 @@
 import { IoMdArrowForward } from "react-icons/io";
 import { IoSchool } from "react-icons/io5";
 import MainButton from "../ui/buttons/mainButton";
-import {
-  getArticles,
-  getGroupsLight,
-  getMembers,
-  getProjects,
-  getSoftwares,
-} from "@/services/api";
 import { MdComputer, MdOutlineArticle } from "react-icons/md";
 import HeroCard from "../ui/cards/heroCard";
-import { useEffect, useState } from "react";
 import formatNumber from "@/utils/numberFormat";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { LuUser, LuUsers } from "react-icons/lu";
+import { useStats } from "@/hooks/getStats";
 
 export default function Hero() {
-  const [totalGroups, setTotalGroups] = useState<number>(0);
-  const [totalGroupsDepartment, setTotalGroupsDepartment] = useState<number>(0);
-  const [totalMembers, setTotalMembers] = useState<number>(0);
-  const [totalSoftwares, setTotalSoftwares] = useState<number>(0);
-  const [totalValidatedSoftwares, setTotalValidatedSoftwares] =
-    useState<number>(0);
-  const [totalArticles, setTotalArticles] = useState<number>(0);
-  const [totalArticles2025, setTotalArticles2025] = useState<number>(0);
-  const [totalProjects, setTotalProjects] = useState<number>(0);
-  const [totalProjectsEnded, setTotalProjectsEnded] = useState<number>(0);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const results = await Promise.all([
-        getGroupsLight(),
-        getGroupsLight("department=boyacá"),
-        getMembers("state=activo"),
-        getSoftwares(),
-        getSoftwares("validated=true"),
-        getArticles(),
-        getArticles("from=2025"),
-        getProjects(),
-        getProjects("status=finalizado"),
-      ]);
-
-      const [
-        groups,
-        groupsDepartment,
-        members,
-        softwares,
-        validatedSoftwares,
-        articles,
-        articles2025,
-        projects,
-        projectsEnded,
-      ] = results;
-
-      setTotalGroups(groups.meta.totalDocs);
-      setTotalGroupsDepartment(groupsDepartment.meta.totalDocs);
-      setTotalMembers(members.meta.totalDocs);
-      setTotalSoftwares(softwares.meta.totalDocs);
-      setTotalValidatedSoftwares(validatedSoftwares.meta.totalDocs);
-      setTotalArticles(articles.meta.totalDocs);
-      setTotalArticles2025(articles2025.meta.totalDocs);
-      setTotalProjects(projects.meta.totalDocs);
-      setTotalProjectsEnded(projectsEnded.meta.totalDocs);
-    };
-
-    fetchData();
-  });
+  const { stats, loading, error } = useStats();
+  //TODO: Manejar estado de carga de cada una de las cards y en caso que haya un error.
 
   return (
     <header className="flex flex-col gap-36 justify-center h-dvh items-center pt-35 mx-[10%]">
@@ -105,32 +50,37 @@ export default function Hero() {
         <HeroCard
           title="Grupos Activos"
           Icon={LuUsers}
-          amount={formatNumber(totalGroups)}
-          text={`${totalGroupsDepartment} en Boyacá`}
+          amount={formatNumber(stats.groups)}
+          text={`${stats.boyacaGroups} en Boyacá`}
+          isLoading={stats.groups === 0 || stats.boyacaGroups === 0}
         />
         <HeroCard
           title="Investigadores"
           Icon={LuUser}
-          amount={formatNumber(totalMembers)}
+          amount={formatNumber(stats.members)}
           text="Activos"
+          isLoading={stats.members === 0}
         />
         <HeroCard
           title="Softwares Publicados"
           Icon={MdComputer}
-          amount={formatNumber(totalSoftwares)}
-          text={`+${formatNumber(totalValidatedSoftwares)} validados`}
+          amount={formatNumber(stats.softwares)}
+          text={`+${formatNumber(stats.validSoftwares)} validados`}
+          isLoading={stats.softwares === 0 || stats.validSoftwares === 0}
         />
         <HeroCard
           title="Articulos Publicados"
           Icon={MdOutlineArticle}
-          amount={formatNumber(totalArticles)}
-          text={`+${formatNumber(totalArticles2025)} este año`}
+          amount={formatNumber(stats.articles)}
+          text={`+${formatNumber(stats.yearArticles)} este año`}
+          isLoading={stats.articles === 0 || stats.yearArticles === 0}
         />
         <HeroCard
           title="Proyectos Realizados"
           Icon={AiOutlineFundProjectionScreen}
-          amount={formatNumber(totalProjects)}
-          text={`${formatNumber(totalProjectsEnded)} finalizados`}
+          amount={formatNumber(stats.projects)}
+          text={`${formatNumber(stats.endedProjects)} finalizados`}
+          isLoading={stats.projects === 0 || stats.endedProjects === 0}
         />
       </div>
     </header>
