@@ -2,7 +2,7 @@
 
 import { FiHome } from "react-icons/fi";
 import NavLink from "../links/navLink";
-import NavButton from "../buttons/navButton";
+import NavButton from "../ui/buttons/navButton";
 import { IoLanguage } from "react-icons/io5";
 import { LuMoon } from "react-icons/lu";
 import Image from "next/image";

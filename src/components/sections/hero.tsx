@@ -2,7 +2,7 @@
 
 import { IoMdArrowForward } from "react-icons/io";
 import { IoSchool } from "react-icons/io5";
-import MainButton from "../buttons/mainButton";
+import MainButton from "../ui/buttons/mainButton";
 import {
   getArticles,
   getGroupsLight,
@@ -11,7 +11,7 @@ import {
   getSoftwares,
 } from "@/services/api";
 import { MdComputer, MdOutlineArticle } from "react-icons/md";
-import HeroCard from "../cards/heroCard";
+import HeroCard from "../ui/cards/heroCard";
 import { useEffect, useState } from "react";
 import formatNumber from "@/utils/numberFormat";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
