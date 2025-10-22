@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <main>
+      <main className="h-full min-h-screen">
         <Hero />
       </main>
     </>

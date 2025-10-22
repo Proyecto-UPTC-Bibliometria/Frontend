@@ -14,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rem.className} antialiased`}>{children}</body>
+      <body className={`${rem.className} antialiased min-h-screen`}>
+        {children}
+      </body>
     </html>
   );
 }
