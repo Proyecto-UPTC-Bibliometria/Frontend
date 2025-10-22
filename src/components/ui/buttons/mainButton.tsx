@@ -13,14 +13,14 @@ export default function MainButton({
     <>
       {primary ? (
         <Link
-          className="group bg-amber-300 px-5 py-3.5 font-normal rounded-2xl hover:scale-105 button hover:bg-[#f8cc2e] text-neutral-950 shadow-yellow-center/70 flex gap-1 items-center"
+          className="group text-center bg-amber-300 px-5 py-3.5 font-normal rounded-2xl hover:scale-105 button hover:bg-[#f8cc2e] text-neutral-950 shadow-yellow-center/70 flex gap-1 items-center justify-center"
           href={href}
         >
           {children}
         </Link>
       ) : (
         <Link
-          className="bg-neutral-200 px-5 py-3.5 font-normal rounded-2xl hover:scale-105 button hover:bg-neutral-300/75 shadow-black-center/15 flex gap-1 items-center"
+          className="bg-neutral-200 text-center px-5 py-3.5 font-normal rounded-2xl hover:scale-105 button hover:bg-neutral-300/75 shadow-black-center/15 flex gap-1 items-center justify-center"
           href={href}
         >
           {children}
