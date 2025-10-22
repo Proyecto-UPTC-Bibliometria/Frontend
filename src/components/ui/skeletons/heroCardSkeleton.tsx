@@ -7,8 +7,8 @@ export default function HeroCardSkeleton() {
       </div>
 
       <div className="flex flex-col gap-1">
-        <div className="flex bg-neutral-300/50 w-28 h-8 rounded-md" />
-        <div className="flex bg-neutral-300/50 w-28 h-4 rounded-sm" />
+        <div className="flex bg-neutral-300/50 w-20 h-8 rounded-md" />
+        <div className="flex bg-neutral-300/50 w-24 h-4 rounded-sm" />
       </div>
     </div>
   );
