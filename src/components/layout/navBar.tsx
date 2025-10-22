@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <header className="flex justify-between items-center py-12 fixed w-full px-[10%]">
+    <header className="flex justify-between items-center md:py-12 py-6 fixed w-full px-[10%]">
       <div>
         <Link
           className="flex hover:scale-115 hover:rotate-z-3 transition-all ease-bounce duration-300"
@@ -26,7 +26,7 @@ export default function NavBar() {
         </Link>
       </div>
 
-      <nav>
+      <nav className="hidden md:flex">
         <ul className="flex gap-4 items-center">
           <li>
             <NavLink href={"/"}>
