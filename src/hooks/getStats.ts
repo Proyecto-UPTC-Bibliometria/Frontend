@@ -1,3 +1,9 @@
+import ApiResponse from "@/interfaces/apiResponse.interface";
+import Article from "@/interfaces/article.interface";
+import Group from "@/interfaces/group.interface";
+import Member from "@/interfaces/member.interface";
+import Project from "@/interfaces/project.interface";
+import Software from "@/interfaces/software.interface";
 import {
   getArticles,
   getGroupsLight,
@@ -9,7 +15,9 @@ import { useEffect, useState } from "react";
 
 interface StatConfig {
   key: keyof typeof initialStats;
-  save: () => Promise<any>;
+  save: () => Promise<
+    ApiResponse<Group | Member | Software | Article | Project>
+  >;
 }
 
 const initialStats = {
@@ -61,6 +69,7 @@ export const useStats = () => {
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { stats, loading, error };
