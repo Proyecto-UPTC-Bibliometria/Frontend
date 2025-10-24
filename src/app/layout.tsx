@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { rem } from "@/styles/fonts";
+import { rem } from "@/styles/fonts.js";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {

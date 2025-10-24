@@ -1,4 +1,4 @@
-import StrategicPlan from "./auxiliars/strategicPlan.interface";
+import StrategicPlan from "./auxiliars/strategicPlan.interface.js";
 
 export default interface Group {
   id: number;
