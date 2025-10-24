@@ -1,9 +1,9 @@
-import ApiResponse from "@/interfaces/apiResponse.interface.js";
-import Article from "@/interfaces/article.interface.js";
-import Group from "@/interfaces/group.interface.js";
-import Member from "@/interfaces/member.interface.js";
-import Project from "@/interfaces/project.interface.js";
-import Software from "@/interfaces/software.interface.js";
+import ApiResponse from "@/interfaces/apiResponse.interface";
+import Article from "@/interfaces/article.interface";
+import Group from "@/interfaces/group.interface";
+import Member from "@/interfaces/member.interface";
+import Project from "@/interfaces/project.interface";
+import Software from "@/interfaces/software.interface";
 import {
   getArticles,
   getGroupsLight,

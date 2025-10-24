@@ -1,4 +1,4 @@
-import MemberGroups from "./auxiliars/memberGroups.interface.js";
+import MemberGroups from "./auxiliars/memberGroups.interface";
 
 export default interface Member {
   id: number;

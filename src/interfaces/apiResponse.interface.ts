@@ -1,4 +1,4 @@
-import Meta from "./meta.interface.js";
+import Meta from "./meta.interface";
 
 export default interface ApiResponse<T> {
   docs: T[];
