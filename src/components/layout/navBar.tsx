@@ -8,17 +8,36 @@ import { LuMoon } from "react-icons/lu";
 import Image from "next/image";
 import logo from "../../../public/logo.webp";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function NavBar() {
+  const [headerStyle, setHeaderStyle] = useState<string>("");
+  useEffect(() => {
+    const handleScroll = () => {
+      const style =
+        window.scrollY > 10
+          ? "py-3 md:py-6 bg-neutral-50/55 backdrop-blur-lg shadow-black-center/20"
+          : "py-6 md:py-12 bg-transparent";
+
+      setHeaderStyle(style);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <header className="flex justify-between items-center md:py-12 py-6 fixed w-full px-[10%]">
+    <header
+      className={`flex justify-between items-center fixed w-full px-[10%] ${headerStyle} transition-all ease-in-out duration-200`}
+    >
       <div>
         <Link
           className="flex hover:scale-115 hover:rotate-z-3 transition-all ease-bounce duration-300"
           href={"/"}
         >
           <Image
-            className="drop-shadow-black-center/70"
+            className="drop-shadow-black-center/40"
             src={logo}
             alt="UPTC smooth logo"
             height={42}
