@@ -9,9 +9,12 @@ import Image from "next/image";
 import logo from "../../../public/logo.webp";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { HiMenuAlt3 } from "react-icons/hi";
 
-export default function NavBar() {
-  const [headerStyle, setHeaderStyle] = useState<string>("");
+export default function NavBar({ openMenu }: { openMenu: () => void }) {
+  const [headerStyle, setHeaderStyle] = useState<string>(
+    "py-6 md:py-12 bg-transparent"
+  );
   useEffect(() => {
     const handleScroll = () => {
       const style =
@@ -65,11 +68,18 @@ export default function NavBar() {
       </nav>
 
       <div className="flex gap-4 items-center">
-        <NavButton aria-label="Cambiar idioma">
+        <NavButton aria-label="Change Language">
           <IoLanguage size={22} />
         </NavButton>
-        <NavButton aria-label="Cambiar modo de color">
+        <NavButton aria-label="Change color scheme">
           <LuMoon size={22} />
+        </NavButton>
+        <NavButton
+          aria-label="Open hamburger menu"
+          className="flex md:hidden"
+          action={openMenu}
+        >
+          <HiMenuAlt3 size={22} />
         </NavButton>
       </div>
     </header>
