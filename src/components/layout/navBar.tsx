@@ -7,6 +7,7 @@ import { IoLanguage } from "react-icons/io5";
 import { LuMoon } from "react-icons/lu";
 import Image from "next/image";
 import logo from "../../../public/logo.webp";
+import logoWhite from "../../../public/logo-white.webp";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -40,9 +41,15 @@ export default function NavBar({ openMenu }: { openMenu: () => void }) {
           href={"/"}
         >
           <Image
-            className="drop-shadow-black-center/40"
+            className="drop-shadow-black-center/40 dark:hidden"
             src={logo}
             alt="UPTC smooth logo"
+            height={42}
+          />
+          <Image
+            className="drop-shadow-white-center/20 hidden dark:block"
+            src={logoWhite}
+            alt="UPTC smooth logo in white"
             height={42}
           />
         </Link>

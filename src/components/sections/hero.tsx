@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <header className="flex flex-col lg:gap-36 md:gap-18 gap-12 justify-center h-full items-center pt-35 mx-[10%] min-h-screen">
       <div className="flex flex-col md:gap-16 gap-8 max-w-5xl items-center justify-center">
-        <div className="flex gap-2 items-center bg-amber-50 lg:px-4 lg:py-2 px-3 py-1 rounded-full lg:text-sm text-xs border border-amber-300 shadow-yellow-center/50 text-amber-400">
+        <div className="flex gap-2 items-center bg-amber-50 dark:bg-amber-950/30 dark:text-amber-300/80 dark:shadow-yellow-center/25 lg:px-4 lg:py-2 px-3 py-1 rounded-full lg:text-sm text-xs border border-amber-300 shadow-yellow-center/50 text-amber-400">
           <IoSchool
             className="font-bold stroke-3 max-lg:w-4"
             size={20}
@@ -27,16 +27,16 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h1 className="lg:text-6xl text-4xl font-bold text-neutral-900 text-center mx-[8%] hidden sm:block">
+          <h1 className="lg:text-6xl text-4xl font-bold text-neutral-900 dark:text-neutral-100 text-center mx-[8%] hidden sm:block">
             La investigación de la UPTC en un solo lugar
           </h1>
           <h1
-            className="lg:text-6xl text-4xl font-bold text-neutral-900 text-center mx-[8%] sm:hidden"
+            className="lg:text-6xl text-4xl font-bold text-neutral-900 dark:text-neutral-100 text-center mx-[8%] sm:hidden"
             aria-hidden="true"
           >
             Investigación de la UPTC
           </h1>
-          <p className="lg:text-xl text-lg text-center text-amber-950/60 text-pretty">
+          <p className="lg:text-xl text-lg text-center text-amber-950/60 dark:text-amber-50/60 text-pretty">
             Explora grupos de investigacion, articulos y libros publicados,
             proyectos de investigación y mas.
           </p>
