@@ -17,7 +17,7 @@ export default function MobileMenu({
       className={`flex md:hidden fixed w-full h-dvh bg-white/70 backdrop-blur-lg z-50 flex-col p-8 justify-between ${style} transition-all ease-in-out duration-300`}
     >
       <button
-        className="hover:bg-neutral-200 w-fit rounded-xl transition-all ease-in-out duration-200"
+        className="hover:bg-neutral-200 w-fit rounded-xl transition-all ease-in-out duration-200 p-0.5 cursor-pointer"
         onClick={() => onClose()}
       >
         <IoClose size={42} />
