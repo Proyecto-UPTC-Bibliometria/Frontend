@@ -20,7 +20,7 @@ export default function NavBar({ openMenu }: { openMenu: () => void }) {
     const handleScroll = () => {
       const style =
         window.scrollY > 10
-          ? "py-3 md:py-6 bg-neutral-50/55 dark:bg-neutral-900/50 backdrop-blur-lg shadow-black-center/20"
+          ? "py-3 md:py-6 bg-neutral-50/55 dark:bg-neutral-900/50 dark:shadow-white-center/5 backdrop-blur-lg shadow-black-center/20"
           : "py-6 md:py-12 bg-transparent";
 
       setHeaderStyle(style);

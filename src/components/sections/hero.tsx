@@ -6,10 +6,10 @@ import MainButton from "../ui/buttons/mainButton";
 import { MdComputer, MdOutlineArticle } from "react-icons/md";
 import HeroCard from "../ui/cards/heroCard";
 import formatNumber from "@/utils/numberFormat";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { LuUser, LuUsers } from "react-icons/lu";
 import { useStats } from "@/hooks/getStats";
 import MiniHeroCard from "../ui/cards/miniHeroCard";
+import { GoProject } from "react-icons/go";
 
 export default function Hero() {
   const { stats, loading } = useStats();
@@ -86,7 +86,7 @@ export default function Hero() {
         />
         <HeroCard
           title="Proyectos Realizados"
-          Icon={AiOutlineFundProjectionScreen}
+          Icon={GoProject}
           amount={formatNumber(stats.projects)}
           text={`${formatNumber(stats.endedProjects)} finalizados`}
           isLoading={loading}

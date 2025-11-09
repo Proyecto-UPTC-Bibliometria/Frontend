@@ -14,10 +14,10 @@ export default function MobileMenu({
 
   return (
     <section
-      className={`flex md:hidden fixed w-full h-dvh bg-white/70 backdrop-blur-lg z-50 flex-col p-8 justify-between ${style} transition-all ease-in-out duration-300`}
+      className={`flex md:hidden fixed w-full h-dvh bg-white/70 dark:bg-black/70 backdrop-blur-lg z-50 flex-col p-8 justify-between ${style} transition-all ease-in-out duration-300`}
     >
       <button
-        className="hover:bg-neutral-200 w-fit rounded-xl transition-all ease-in-out duration-200 p-0.5 cursor-pointer"
+        className="hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 w-fit rounded-xl transition-all ease-in-out duration-200 p-0.5 cursor-pointer"
         onClick={() => onClose()}
       >
         <IoClose size={42} />
@@ -40,7 +40,7 @@ export default function MobileMenu({
         </ul>
       </nav>
 
-      <div className="flex w-full justify-center gap-1 text-neutral-400 items-center">
+      <div className="flex w-full justify-center gap-1 text-neutral-400 dark:text-neutral-600 items-center">
         <span className="w-fit">Más información</span>
       </div>
     </section>

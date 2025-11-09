@@ -12,7 +12,7 @@ export default function MobileLink({
   return (
     <>
       <Link
-        className={`text-4xl w-full text-neutral-600 gap-2 transition-all ease-in-out duration-200 nav-link relative py-2 before:origin-center before:rounded-xl flex items-center hover:text-neutral-900 hover:scale-105`}
+        className={`text-4xl w-full text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-100 gap-2 transition-all ease-in-out duration-200 nav-link relative py-2 before:origin-center before:rounded-xl flex items-center hover:text-neutral-900 hover:scale-105`}
         href={href}
       >
         {children}
