@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --shadow-yellow-center: 0px 0px 50px -2px oklch(85.2% 0.199 91.936);
   --drop-shadow-yellow-center: 0px 0px 15px oklch(85.2% 0.199 91.936);

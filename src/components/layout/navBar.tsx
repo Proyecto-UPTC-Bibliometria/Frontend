@@ -33,7 +33,7 @@ export default function NavBar({ openMenu }: { openMenu: () => void }) {
 
   return (
     <header
-      className={`flex justify-between items-center fixed w-full px-[10%] ${headerStyle} transition-all ease-in-out duration-200`}
+      className={`flex justify-between items-center fixed w-full px-[10%] ${headerStyle} transition-all ease-in-out duration-200 z-50`}
     >
       <div>
         <Link

@@ -13,7 +13,7 @@ export default function MainButton({
     <>
       {primary ? (
         <Link
-          className="group text-center bg-amber-300 px-5 py-3.5 font-normal rounded-2xl hover:scale-105 button hover:bg-[#f8cc2e] text-neutral-950 shadow-yellow-center/70 flex gap-1 items-center justify-center dark:shadow-yellow-center/40"
+          className="group text-center bg-amber-300 px-5 py-3.5 font-normal rounded-2xl hover:scale-105 button hover:bg-[#f8cc2e] text-neutral-950 shadow-yellow-center/70 flex gap-1 items-center justify-center dark:shadow-yellow-center/40 z-10"
           href={href}
         >
           {children}

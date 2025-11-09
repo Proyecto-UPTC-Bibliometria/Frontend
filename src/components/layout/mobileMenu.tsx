@@ -14,7 +14,7 @@ export default function MobileMenu({
 
   return (
     <section
-      className={`flex md:hidden fixed w-full h-dvh bg-white/70 dark:bg-black/70 backdrop-blur-lg z-50 flex-col p-8 justify-between ${style} transition-all ease-in-out duration-300`}
+      className={`flex md:hidden fixed w-full h-dvh bg-white/70 dark:bg-black/70 backdrop-blur-lg z-60 flex-col p-8 justify-between ${style} transition-all ease-in-out duration-300`}
     >
       <button
         className="hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 w-fit rounded-xl transition-all ease-in-out duration-200 p-0.5 cursor-pointer"

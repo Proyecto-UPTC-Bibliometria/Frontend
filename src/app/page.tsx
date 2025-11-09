@@ -9,7 +9,7 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <>
+    <div>
       <MobileMenu
         isOpen={isOpen}
         onClose={() => {
@@ -21,6 +21,6 @@ export default function Home() {
       <main className="h-full min-h-screen">
         <Hero />
       </main>
-    </>
+    </div>
   );
 }
