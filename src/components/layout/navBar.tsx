@@ -4,7 +4,7 @@ import { FiHome } from "react-icons/fi";
 import NavLink from "../ui/links/navLink";
 import NavButton from "../ui/buttons/navButton";
 import { IoLanguage } from "react-icons/io5";
-import { LuMoon } from "react-icons/lu";
+import { LuMoon, LuSun } from "react-icons/lu";
 import Image from "next/image";
 import logo from "../../../public/logo.webp";
 import logoWhite from "../../../public/logo-white.webp";
@@ -12,10 +12,23 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 
-export default function NavBar({ openMenu }: { openMenu: () => void }) {
+export default function NavBar({
+  openMenu,
+  changeTheme,
+}: {
+  openMenu: () => void;
+  changeTheme: () => void;
+}) {
   const [headerStyle, setHeaderStyle] = useState<string>(
     "py-6 md:py-12 bg-transparent"
   );
+
+  const [theme, setTheme] = useState<string>("");
+
+  useEffect(() => {
+    setTheme(window.localStorage.getItem("theme") ?? "");
+  });
+
   useEffect(() => {
     const handleScroll = () => {
       const style =
@@ -78,8 +91,19 @@ export default function NavBar({ openMenu }: { openMenu: () => void }) {
         <NavButton aria-label="Change Language">
           <IoLanguage size={22} />
         </NavButton>
-        <NavButton aria-label="Change color scheme">
-          <LuMoon size={22} />
+        <NavButton aria-label="Change color scheme" action={changeTheme}>
+          <LuMoon
+            className={`${
+              theme === "dark" ? "" : "scale-0"
+            } transition-all ease-bounce duration-300`}
+            size={22}
+          />
+          <LuSun
+            className={`${
+              theme === "dark" ? "scale-0" : ""
+            } transition-all ease-bounce duration-300 absolute`}
+            size={22}
+          />
         </NavButton>
         <NavButton
           aria-label="Open hamburger menu"
